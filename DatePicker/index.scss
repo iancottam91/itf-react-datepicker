@@ -1,0 +1,249 @@
+@import "../../base/src/colours";
+@import "../../base/src/icons";
+
+.datepicker-itf {
+  background: white;
+  display: inline-flex;
+  flex-direction: column;
+  width: 319px;
+  position: relative;
+
+  &__selector {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: white;
+    z-index: 99;
+    border: 1px solid $grey;
+    width: 100%;
+  }
+
+  &__input-area {
+    height: 50px;
+    display: flex;
+  }
+
+  &__input-label {
+    font-weight: 900;
+    text-transform: uppercase;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    border-bottom: 1px solid;
+  }
+
+  &__input-wrapper {
+    flex-grow: 1;
+    position: relative;
+
+    &:first-child {
+      .datepicker-itf__input {
+        border-right: 0;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      @include icon-chevron--grey("../../");
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    &--active {
+      &:after {
+        transform: rotate(180deg);
+        background-color: $lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+      }
+    }
+
+    &--disabled {
+      &:after {
+        background: none;
+      }
+    }
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    text-indent: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid $midgrey;
+    text-align: left;
+  }
+
+  &__days {
+    display: flex;
+  }
+
+  &__dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 10px 20px 0;
+    border-bottom: 1px solid $midgrey;
+  }
+
+  &__day-labels {
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 16px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    height: 40px;
+    align-items: center;
+    border-bottom: 1px solid $midgrey;
+    border-top: 1px solid;
+    margin: 0 20px;
+  }
+
+  &__date {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+    color: $grey;
+
+    &--start-date {
+      background: $green;
+      color: white;
+      border-radius: 20px 0 0 20px;
+    }
+
+    &--end-date {
+      background: $green;
+      color: white;
+      border-radius: 0 20px 20px 0;
+    }
+
+    &--range-date {
+      background: $green;
+      color: white;
+    }
+
+    &:hover {
+      background: $lightgrey;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: Lato;
+      line-height: 24px;
+      width: 100%;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      color: inherit;
+    }
+
+    &--outside-month,
+    &--disabled {
+      color: #b6b6b6;
+
+      button {
+        cursor: default;
+      }
+
+      &:hover {
+        background: unset;
+      }
+    }
+  }
+
+  &__switcher {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    position: relative;
+  }
+
+  &__years {
+    min-width: 180px;
+
+    // I despise this styling in JS. Look what you made me do react select!
+    .dropdown {
+      position: static;
+
+      div[class$="-MenuList"] {
+        max-height: 220px;
+      }
+
+      div[class$="-menu"] {
+        left: -21px;
+        width: calc(100% + 42px);
+
+        div[class$="-option"] {
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+      }
+
+      > [class$="control"] {
+        border: 0;
+
+        > div {
+          &:first-child {
+            justify-content: center;
+            font-size: 15px;
+            color: $grey !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__month-switcher {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 0;
+
+    @include icon-chevron--grey("../../");
+    height: auto;
+    width: 50px;
+
+    &--previous {
+      transform: rotate(90deg);
+    }
+
+    &--next {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &--beach {
+    .datepicker-itf {
+      &__date {
+        color: $nearly-black;
+
+        &--start-date {
+          background: $yellow;
+        }
+
+        &--end-date {
+          background: $yellow;
+        }
+
+        &--range-date {
+          background: $yellow;
+        }
+      }
+    }
+  }
+}
+
+@import "./transition";

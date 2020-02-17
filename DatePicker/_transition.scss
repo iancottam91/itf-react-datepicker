@@ -1,0 +1,73 @@
+.datepicker-itf {
+  &__transition--dates {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+
+    // styles for both transition directions
+    .datepicker-itf {
+      &__dates {
+        &.exit {
+          position: absolute;
+          top: 0;
+          width: calc(100% - 40px);
+        }
+
+        &.enter {
+          position: relative;
+        }
+      }
+    }
+
+    &-SLIDE-RIGHT {
+      .datepicker-itf {
+        &__dates {
+          &.exit {
+            left: 0;
+            transition: left 0.3s ease;
+
+            &-active {
+              left: -100%;
+            }
+          }
+
+          &.enter {
+            position: relative;
+            left: 100%;
+            transition: left 0.3s ease;
+
+            &-active {
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &-SLIDE-LEFT {
+      .datepicker-itf {
+        &__dates {
+          &.exit {
+            right: 0;
+            transition: right 0.3s ease;
+
+            &-active {
+              right: -100%;
+            }
+          }
+
+          &.enter {
+            position: relative;
+            right: 100%;
+            transition: right 0.3s ease;
+
+            &-active {
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
