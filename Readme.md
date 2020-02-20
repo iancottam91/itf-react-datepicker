@@ -2,6 +2,14 @@
 
 The datepicker developed for the ITF Website, check out the [DEMO](https://iancottam91.github.io/itf-react-datepicker)
 
+## Install and usage
+
+Install it
+
+```
+yarn add itf-react-datepicker
+```
+
 ## Props
 
 Yo, this datepicker needs a wrapper that holds the state of the start and end dates. This gives you the flexibility to change the selected dates from your own code e.g. in a reset dates button. 
