@@ -10,11 +10,13 @@
     "react-transition-group": "^4.3.0"
   },
   "scripts": {
-    "start": "start-storybook"
+    "start": "start-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@storybook/react": "^5.3.13",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/node": "^13.7.1",
     "@types/react-select": "^3.0.10",
     "@types/react-transition-group": "^4.2.3",

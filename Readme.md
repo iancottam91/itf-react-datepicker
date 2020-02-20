@@ -1,6 +1,6 @@
 # ITF React Datepicker
 
-The datepicker developed for the ITF Website, check out the DEMO
+The datepicker developed for the ITF Website, check out the [DEMO](https://iancottam91.github.io/itf-react-datepicker)
 
 ## Props
 
