@@ -85,7 +85,7 @@ const Dropdown = (props: dropdownType) => {
       styles={props.customStyles || customStyles}
       onChange={props.onChange}
       isDisabled={props.isDisabled}
-      className={"dropdown" + (className ? ` ${className}` : "")}
+      className={"dropdown-itf" + (className ? ` ${className}` : "")}
       value={props.value}
       menuPortalTarget={props.menuPortalTarget}
       menuPlacement={props.menuPlacement}

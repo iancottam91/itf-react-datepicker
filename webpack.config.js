@@ -1,7 +1,9 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/DatePickerITF/DatePicker.tsx',
+  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -11,7 +13,8 @@ module.exports = {
       },
       {
         test: /\.(?:sc|sa|c)ss$/,
-        use: [          
+        use: [        
+          MiniCssExtractPlugin.loader,  
           {
             loader: "css-loader",
             options: { sourceMap: false }
@@ -45,4 +48,5 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  mode: 'production'
 };
