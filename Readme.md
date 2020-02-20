@@ -10,6 +10,35 @@ Install it
 yarn add itf-react-datepicker
 ```
 
+Then use it
+
+```
+import React, { useState } from "react";
+import DatePickerITF from "./DatePicker";
+
+// add css - up to you how you do this
+import '~/node_modules/itf-react-datepicker/dist/main.css';
+
+const DatePickerExample = (props) => {
+  const { initialStartDate, initialEndDate } = props;
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  return (
+    <DatePickerITF
+      startDate={startDate}
+      endDate={endDate}
+      onDateChange={(startDate, endDate) => {
+        setStartDate(startDate);
+        setEndDate(endDate);
+      }}
+    />
+  );
+};
+
+```
+
+
 ## Props
 
 Yo, this datepicker needs a wrapper that holds the state of the start and end dates. This gives you the flexibility to change the selected dates from your own code e.g. in a reset dates button. 

@@ -1,6 +1,6 @@
 {
   "name": "itf-react-datepicker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A date picker designed for the ITF website",
   "main": "dist/bundle.js",
   "license": "MIT",
