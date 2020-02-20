@@ -41,11 +41,11 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
+    "react": "react",
   },
   output: {
     filename: 'bundle.js',
+    libraryTarget: "umd",
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production'
