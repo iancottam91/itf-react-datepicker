@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext, useRef } from "react";
-import Dropdown from "../../static/Dropdown/Dropdown";
+import Dropdown from "../Dropdown/Dropdown";
 import {
   dayLabels,
   getDaysInMonth,
@@ -7,9 +7,9 @@ import {
   yearSelectionOpts,
   datesAreOnSameDay,
   isDateInRange
-} from "./helpers";
+} from "../helpers";
 import "./index.scss";
-import { useOutsideAlerter } from "../../helpers/index";
+import { useOutsideAlerter } from "../helpers/useOutsideAlerter";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 interface DatePickerContext {
@@ -97,10 +97,10 @@ const DatePickerSwitcher = (props: DatePickerSwitcherProps) => {
     viewedMonth,
     setSelectedMonth,
     setSelectedYear,
-    currentYear,
     viewedYear,
     setTransitionType,
-    setIsTransitionDisabled
+    setIsTransitionDisabled,
+    currentYear
   } = props;
 
   const { isTransitionDisabled } = useContext(DatePickerContext);

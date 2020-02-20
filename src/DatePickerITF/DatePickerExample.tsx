@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import DatePickerITF from "./DatePicker";
 
+import './example.scss';
+
 const DatePickerExample = (props: {
   initialStartDate?: Date;
   initialEndDate?: Date;
@@ -18,6 +20,7 @@ const DatePickerExample = (props: {
   return (
     <>
       <button
+        className="btn btn--eg"
         onClick={() => {
           setStartDate(null);
           setEndDate(null);

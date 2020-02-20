@@ -1,12 +1,26 @@
-@import "../../base/src/colours";
-@import "../../base/src/icons";
+@import "./colours";
+
+@mixin icon-chevron--grey() {
+  background-image: url("../assets/images/chevron-right-grey.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  display: inline-block;
+  height: 16px;
+  width: 15px;
+}
 
 .datepicker-itf {
   background: white;
   display: inline-flex;
   flex-direction: column;
-  width: 319px;
-  position: relative;
+  width: 320px;
+  position: relative;  
+  color: $grey;
+
+  * {
+    box-sizing: border-box;
+  }
 
   &__selector {
     position: absolute;
@@ -48,7 +62,7 @@
       content: "";
       position: absolute;
       right: 10px;
-      @include icon-chevron--grey("../../");
+      @include icon-chevron--grey();
       top: 10px;
       width: 30px;
       height: 30px;
@@ -212,9 +226,9 @@
     cursor: pointer;
     font-size: 0;
 
-    @include icon-chevron--grey("../../");
+    @include icon-chevron--grey();
     height: auto;
-    width: 50px;
+    width: 45px;
 
     &--previous {
       transform: rotate(90deg);
@@ -243,6 +257,17 @@
         }
       }
     }
+  }
+
+  .btn {
+    height: 50px;
+    padding: 0 25px;
+    background-color: white;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $grey;
+    cursor: pointer;
   }
 }
 

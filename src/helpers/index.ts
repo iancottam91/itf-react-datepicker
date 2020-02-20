@@ -1,4 +1,4 @@
-import { dropdownItem } from "../../static/Dropdown/types";
+// import { dropdownItem } from "../../static/Dropdown/types";
 
 // get days of the month
 export const dayLabels = ["mon", "tue", "wed", "thur", "fri", "sat", "sun"];
@@ -56,7 +56,7 @@ export const yearSelectionOpts = (
 ) => {
   // get current year, go back to 1975
   let year = new Date().getFullYear() + 1;
-  let yearSelectionOpts: dropdownItem[] = [];
+  let yearSelectionOpts: any[] = [];
 
   while (year > 1975) {
     yearSelectionOpts.push({

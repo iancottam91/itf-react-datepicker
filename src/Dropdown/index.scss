@@ -1,0 +1,54 @@
+@import '../DatePickerITF/colours';
+
+$mobile-and-above: 768px;
+
+@mixin icon-chevron--grey() {
+  background-image: url("../assets/images/chevron-right-grey.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  display: inline-block;
+  height: 16px;
+  width: 15px;
+}
+
+.dropdown {
+  font-size: 12px;
+
+  div[class$="-control"] {
+    border-width: 1px;
+    height: 45px;
+  }
+
+  div[class$="-menu"] {
+    border-width: 1px;
+    height: unset;
+
+    div[class$="-option"] {
+      text-transform: none;
+      font-size: rem(16);
+      font-weight: 400;
+      white-space: nowrap;
+
+      @media (min-width: $mobile-and-above) {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  .dropdown-indicator {
+    padding: 0 !important;
+    margin-right: 5px;
+    .icon {
+      @include icon-chevron--grey();
+      background-position: center center 12px;
+      padding: 15px;
+
+      &:before,
+      &:after {
+        border-color: $grey;
+        transition: all 250ms;
+      }
+    }
+  }
+}
