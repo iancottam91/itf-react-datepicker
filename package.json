@@ -1,6 +1,6 @@
 {
   "name": "itf-react-datepicker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A date picker designed for the ITF website",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -21,6 +21,13 @@
   "bugs": {
     "url": "https://github.com/iancottam91/itf-react-datepicker/issues"
   },
+  "keywords": [
+    "react",
+    "datepicker",
+    "calendar",
+    "date",
+    "react-component"
+  ],
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@storybook/react": "^5.3.13",
