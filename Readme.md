@@ -54,6 +54,6 @@ Here are the props:
 | bemModifier? | `string`  | a class for the datepicker, if you want it |
 | elementId? | `string`  | an id for the datepicker, if you want it |
 
-You should hold the state for startDate and endDate in your wrapper component and update it with onDateChange. See [DatePickerExample](src/DatePickerITF/DatePickerExample.tsx) for an ... example.
+You should hold the state for startDate and endDate in your wrapper component and update it with onDateChange.
 
 ## Let me know what you think in the issues!
